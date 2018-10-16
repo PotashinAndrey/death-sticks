@@ -1,0 +1,12 @@
+
+  {
+  "lang": "ru",
+  "dir": "ltr",
+  "name": "This is my awesome PWA",
+  "short_name": "Kolesa",
+  "theme_color": "#1a1a1a",
+  "background_color": "#1a1a1a",
+  "start_url": "/pwa",
+  "display": "standalone",
+  "orientation": "natural"
+}
