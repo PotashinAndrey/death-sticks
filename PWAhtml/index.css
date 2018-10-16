@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   border: 0;
+  font-family: tahoma;
 }
 
 div.container {
@@ -34,8 +35,13 @@ margin: 5px;
 }
 
 .button {
-  width: 10%;
-  margin-left: 24%;
+  width: 64px;
+  height: 64px;
+  margin-left: 32%;
+  border-radius: 50%;
+  font-size: 40px;
+  padding: 0;
+  line-height: 64px;
 }
 
 input {
@@ -48,4 +54,8 @@ button {
   border: 1px splid red;
   width: 30%;
   background-color: #37ac7f;
+}
+
+.curs {
+  margin-top: 80vh;
 }
