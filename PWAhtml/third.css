@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  border: 0;
+  border: 0;    
   font-family: tahoma;
   font-size: 20px;
 }
@@ -11,6 +11,40 @@ div.container {
   height: 100vh;
   justify-content: center;
   grid-template-rows: auto 1fr auto;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "back header header" "content content content" "change change change  ";
+}
+
+div.left-bar {
+  grid-row: back;
+  grid-column: back;
+  /* border: 1px solid red; */
+  margin: 15px;
+}
+
+div.right {
+  grid-row: right;
+  grid-column: right;
+  /* border: 1px solid red; */
+}
+
+div.DB {
+  grid-row: header;
+  grid-column: header;
+  /* border: 1px solid red; */
+}
+
+div.content {
+  grid-row: content;
+  border: 1px solid red;
+  grid-column: content;
+}
+
+div.old {
+  grid-row: change;
+  grid-column: change;
+  justify-content: center;
+  /* border: 1px solid red; */
 }
 
 .button {
@@ -23,10 +57,31 @@ div.container {
 }
 
 .link {
-  width: 45%;
-  padding: 15px;
+  padding: 1.5vh;
   color: white;
   background-color: #37ac7f;
   border-radius: 5px;
   text-decoration: none;
+}
+
+.old {
+  /* margin: 40px; */
+  margin-top: 2.5vh;
+  margin-bottom: 2.5vh;
+  margin-left: 35vw;
+}
+
+.DB {
+  margin-top: 3vh;
+
+  width:100%;
+}
+
+.back {
+  padding: 7px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  background-color: #37ac7f;
+  width: 100%;
 }
