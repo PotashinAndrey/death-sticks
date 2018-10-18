@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="index.css">
   <script src="index.js" type="module"></script>
   <link rel="manifest" href="manifest.json">
+  <script src="quagga.js"></script>
+  <script src="script.js"></script>
 </head>
 
 <body>
@@ -19,11 +21,17 @@
   </material-navigation>
   <section>
     <material-paper>
-      <label for="">
-        <material-button mode="primary"><input type="file" accept="image/*" class="inputImg" alt="" />Добавить</material-button>
-      </label>
+      <material-button mode="primary">
+        <label>
+          <input type="file" accept="image/*" class="inputImg" alt="" />
+          По фотографии
+        </label>
+      </material-button>
+      <p>или</p>
       <material-input>Введите название</material-input>
     </material-paper>
+    <pre></pre>
+    <img style="max-width:100%" />
   </section>
   <material-paper>
   </material-paper>
