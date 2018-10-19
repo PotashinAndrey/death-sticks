@@ -1,0 +1,35 @@
+{
+  "4022536645971": {
+    "name": "Вигантол",
+    "ModeOfApplication": {
+      "dayParth": [0,0,1,0,0],
+      "ingestion": [1,0,0],
+      "howManytimes": [1],
+      "otherFunction" : ""
+    }
+  },
+
+  "8595026463356": {
+    "name": "Урсосан",
+    "ModeOfApplication": {
+      "dayParth": [1,1,1,1,0],
+      "ingestion": [0,0,1],
+      "howManytimes": [3],
+      "otherFunction" : ""
+    }
+  },
+
+  "4039581002031": {
+    "name": "Иберогаст",
+    "ModeOfApplication": {
+      "dayParth": [0,1,1,1,0],
+      "ingestion": [1,0,0],
+      "howManytimes": [3],
+      "otherFunction" : ""
+    }
+  }
+
+}
+
+
+
