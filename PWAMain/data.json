@@ -4,7 +4,8 @@
     "ModeOfApplication": {
       "dayParth": [0,0,1,0,0],
       "ingestion": [1,0,0],
-      "howManytimes": [1]
+      "howManytimes": [1],
+      "otherFunction" : ""
     }
   },
 
@@ -13,7 +14,8 @@
     "ModeOfApplication": {
       "dayParth": [1,1,1,1,0],
       "ingestion": [0,0,1],
-      "howManytimes": [3]
+      "howManytimes": [3],
+      "otherFunction" : ""
     }
   },
 
@@ -22,7 +24,8 @@
     "ModeOfApplication": {
       "dayParth": [0,1,1,1,0],
       "ingestion": [1,0,0],
-      "howManytimes": [3]
+      "howManytimes": [3],
+      "otherFunction" : ""
     }
   }
 }
