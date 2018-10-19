@@ -1,4 +1,4 @@
-  {
+{
   "4022536645971": {
     "name": "Вигантол",
     "ModeOfApplication": {
@@ -21,10 +21,12 @@
     "name": "Иберогаст",
     "ModeOfApplication": {
       "dayParth": [0,1,1,1,0],
-      "ingestion": [1,0,0],
+      "ingestion": [1,  0,0],
       "howManytimes": [3]
     }
   }
+
 }
+
 
 

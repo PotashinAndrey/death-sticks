@@ -45,6 +45,8 @@ function getImage(event) {
             }
             var tabletName = data[result.codeResult.code]["name"];
             if (!array.includes(tabletName)) array.push(tabletName);
+            alert(data[result.codeResult.code]["name"]);
+        // console.log(data[result.codeResult.code]["ModeOfApplication"]);
             output.innerText = array;
             if (result.codeResult) {
                 console.log("result", result.codeResult.code);
