@@ -1,6 +1,7 @@
 {
   "4022536645971": {
     "name": "Вигантол",
+    "src": "organ.jpg",
     "ModeOfApplication": {
       "dayParth": [0,0,1,0,0],
       "ingestion": [1,0,0],
@@ -11,6 +12,7 @@
 
   "8595026463356": {
     "name": "Урсосан",
+    "src": "organ.jpg",
     "ModeOfApplication": {
       "dayParth": [1,1,1,1,0],
       "ingestion": [0,0,1],
@@ -21,6 +23,7 @@
 
   "4039581002031": {
     "name": "Иберогаст",
+    "src": "pechen.jpg",
     "ModeOfApplication": {
       "dayParth": [0,1,1,1,0],
       "ingestion": [1,0,0],

@@ -7,3 +7,5 @@ import MaterialInput    from '/material/components/input/material-input.js';
 import MaterialIcon from '/material/components/icon/material-icon.js';
 import MaterialCheckbox from '/material/components/checkbox/material-checkbox.js';
 import MaterialAvatar from '/material/components/avatar/material-avatar.js';
+
+import MedicineListItem from './components/medicine-list-item/medicine-list-item.js';

@@ -17,7 +17,7 @@ async function ready() {
     data = await fetch('./data.json').then(response => response.json());
     var input = document.querySelector('input[type="file"]');
     preview = document.querySelector('img');
-    output = document.querySelector('pre');
+    output = document.querySelector('#change material-list');
 
     input.addEventListener('change', getImage);
 }
@@ -43,11 +43,25 @@ function getImage(event) {
                 alert("Не распозналось");
                 return;
             }
-            var tabletName = data[result.codeResult.code]["name"];
+            var tabletName = data[result.codeResult.code]; // ["name"];
             if (!array.includes(tabletName)) array.push(tabletName);
-            alert(data[result.codeResult.code]["name"]);
+            // alert(data[result.codeResult.code]["name"]);
         // console.log(data[result.codeResult.code]["ModeOfApplication"]);
-            output.innerText = array;
+
+            output.innerHTML = "";
+            for (var i = 0; i < array.length; ++i) {
+                var temp = document.createElement('medicine-list-item');
+                temp.innerHTML = array[i].name;
+                temp.src = array[i].src;
+                // if (array[i].ModeOfApplication.dayParth[0] == 1) temp.style.background = '#b39ddb';
+                // if (array[i].ModeOfApplication.dayParth[1] == 1) temp.style.background = 'red';
+                // if (array[i].ModeOfApplication.dayParth[2] == 1) temp.style.background = 'red';
+                // if (array[i].ModeOfApplication.dayParth[3] == 1) temp.style.background = 'red';
+                // if (array[i].ModeOfApplication.dayParth[4] == 1) temp.style.background = 'red';
+                output.appendChild(temp);
+            }
+            window.location.hash = 'change';
+
             if (result.codeResult) {
                 console.log("result", result.codeResult.code);
             } else {
