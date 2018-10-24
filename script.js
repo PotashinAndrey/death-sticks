@@ -12,12 +12,21 @@
 window.addEventListener('DOMContentLoaded', ready);
 
 var data, preview, output, array = [];
+var parthList;
+var curs = [
+    [],
+    [[], [], []],
+    [[], [], []],
+    [[], [], []],
+    []
+];
 
 async function ready() {
     data = await fetch('./data.json').then(response => response.json());
     var input = document.querySelector('input[type="file"]');
     preview = document.querySelector('img');
     output = document.querySelector('#change material-list');
+    parthList = document.querySelector('#curs section material-paper');
 
     input.addEventListener('change', getImage);
 }
@@ -43,12 +52,30 @@ function getImage(event) {
                 alert("Не распозналось");
                 return;
             }
-            var tabletName = data[result.codeResult.code]; // ["name"];
-            if (!array.includes(tabletName)) array.push(tabletName);
+            var tablet = data[result.codeResult.code]; // ["name"];
+            if (!array.includes(tablet)) {
+                array.push(tablet);
+
+
+                var ingestion = tablet.ModeOfApplication.ingestion;
+                var parth = tablet.ModeOfApplication.dayParth;
+                for (let i = 0; i < parth.length; i++) {
+                    if (parth[i] === 0) continue;
+                    if ((i == 0) || (i == 4)) {
+                        curs[i].push(tablet.name);
+                    } else {
+                        for (let j = 0; j < ingestion.length; j++) {
+                            if (ingestion[i] === 0) continue;
+                            curs[i][j].push(tablet.name);
+                        }
+                    }
+                }
+            }
             // alert(data[result.codeResult.code]["name"]);
-        // console.log(data[result.codeResult.code]["ModeOfApplication"]);
+            // console.log(data[result.codeResult.code]["ModeOfApplication"]);
 
             output.innerHTML = "";
+            parthList.innerHTML = '';
             for (var i = 0; i < array.length; ++i) {
                 var temp = document.createElement('medicine-list-item');
                 temp.innerHTML = array[i].name;
@@ -62,12 +89,22 @@ function getImage(event) {
             }
             window.location.hash = 'change';
 
-            for (var i = 0; i < array.length; i++) {
-                for (var j = 0; j < 5; j++) {
-                    if (array[i].dayPath[j] == 1) {
-                        var temp = document.createElement('medecine-curs');
-                    };
+            var parthNames = ['натощак', 'за завтраком', 'днем', 'вечером', 'перед сном'];
+            for (var i = 0; i < curs.length; i++) {
+                if (curs[i].length === 0) continue; //Проверка на пустоту в массиве
+                if ((i > 0) && (i < 4) && (curs[i][0] == 0) && (curs[i][1] == 0) && (curs[i][2] == 0)) continue;
+
+                var parthTime = document.createElement('material-expand');
+                parthTime.summary = parthNames[i];
+
+                if ((i === 0) || (i === 4)) {
+                    addNewParth(parthTime, curs[i]);
+                } else {
+                    addNewParthOnEat(parthTime, 'до еды', curs[i][0]);
+                    addNewParthOnEat(parthTime, 'во время еды', curs[i][1]);
+                    addNewParthOnEat(parthTime, 'после еды', curs[i][2]);
                 };
+                parthList.appendChild(parthTime);
             };
 
             if (result.codeResult) {
@@ -79,4 +116,22 @@ function getImage(event) {
     }
 
     reader.readAsDataURL(file);
+}
+
+function addNewParth(root, parth) {
+    var temp = document.createElement('medecine-curs');
+    for (let j = 0; j < parth.length; j++) {
+        var item = document.createElement('material-list-item');
+        item.innerHTML = parth[j];
+        temp.appendChild(item);
+    }
+    root.appendChild(temp);
+};
+
+function addNewParthOnEat(root, name, parth) {
+    if (parth.length === 0) return; 
+    const expand = document.createElement('material-expand');
+    expand.summary = name;
+    addNewParth(expand, parth);
+    root.appendChild(expand);
 }

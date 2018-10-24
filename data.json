@@ -1,11 +1,10 @@
-{
+  {
   "4022536645971": {
     "name": "Вигантол",
     "src": "organ.jpg",
     "ModeOfApplication": {
-      "dayParth": [0,0,1,0,0],
+      "dayParth": [1,0,1,0,1],
       "ingestion": [1,0,0],
-      "howManytimes": [1],
       "otherFunction" : ""
     }
   },
@@ -14,9 +13,8 @@
     "name": "Урсосан",
     "src": "organ.jpg",
     "ModeOfApplication": {
-      "dayParth": [1,1,1,1,0],
+      "dayParth": [0,1,1,1,0],
       "ingestion": [0,0,1],
-      "howManytimes": [3],
       "otherFunction" : ""
     }
   },
@@ -27,7 +25,6 @@
     "ModeOfApplication": {
       "dayParth": [0,1,1,1,0],
       "ingestion": [1,0,0],
-      "howManytimes": [3],
       "otherFunction" : ""
     }
   }

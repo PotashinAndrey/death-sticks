@@ -1,0 +1,14 @@
+
+CREATE database drugs;
+
+USE drugs;
+
+CREATE TABLE medicament(
+	code BIGINT NOT NULL,
+	name VARCHAR(255) NOT NULL,
+	dayParth VARCHAR(255),
+	ingestion VARCHAR(255),
+	howManyTimes INT(11) NOT NULL,
+	description TEXT,
+	PRIMARY KEY(code)
+	)ENGINE =InnoDB;
