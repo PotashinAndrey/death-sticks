@@ -62,6 +62,14 @@ function getImage(event) {
             }
             window.location.hash = 'change';
 
+            for (var i = 0; i < array.length; i++) {
+                for (var j = 0; j < 5; j++) {
+                    if (array[i].dayPath[j] == 1) {
+                        var temp = document.createElement('medecine-curs');
+                    };
+                };
+            };
+
             if (result.codeResult) {
                 console.log("result", result.codeResult.code);
             } else {

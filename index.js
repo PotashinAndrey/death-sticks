@@ -9,3 +9,4 @@ import MaterialCheckbox from '/material/components/checkbox/material-checkbox.js
 import MaterialAvatar from '/material/components/avatar/material-avatar.js';
 
 import MedicineListItem from './components/medicine-list-item/medicine-list-item.js';
+import MaterialExpand from '/material/components/expand/material-expand.js';
