@@ -57,15 +57,15 @@ function getImage(event) {
                 array.push(tablet);
 
 
-                var ingestion = tablet.ModeOfApplication.ingestion;
-                var parth = tablet.ModeOfApplication.dayParth;
+                var ingestion = tablet.ModeOfApplication.ingestion; // задаем переменной значение массива до / во время / после еды
+                var parth = tablet.ModeOfApplication.dayParth; // задаем переменной значение массива времени дня(на тощак / утром / днем / вечером / перед сном)
                 for (let i = 0; i < parth.length; i++) {
-                    if (parth[i] === 0) continue;
-                    if ((i == 0) || (i == 4)) {
+                    if (parth[i] === 0) continue; // выходим из итерации елси лекарство не пьется на тощак / перед сном 
+                    if ((i == 0) || (i == 4)) { //добавляем в массив курс в 0 или 4 элемент название лекарства
                         curs[i].push(tablet.name);
                     } else {
                         for (let j = 0; j < ingestion.length; j++) {
-                            if (ingestion[i] === 0) continue;
+                            if (ingestion[j] === 0) continue;
                             curs[i][j].push(tablet.name);
                         }
                     }
@@ -91,10 +91,10 @@ function getImage(event) {
 
             var parthNames = ['натощак', 'за завтраком', 'днем', 'вечером', 'перед сном'];
             for (var i = 0; i < curs.length; i++) {
-                if (curs[i].length === 0) continue; //Проверка на пустоту в массиве
-                if ((i > 0) && (i < 4) && (curs[i][0] == 0) && (curs[i][1] == 0) && (curs[i][2] == 0)) continue;
+                if (curs[i].length === 0) continue; //Проверка на пустоту в первом вложенном и последнем вложенном массиве
+                if ((i > 0) && (i < 4) && (curs[i][0] == 0) && (curs[i][1] == 0) && (curs[i][2] == 0)) continue; //Проверка на пустоту в 2 - 4 дважды вложенных массивах 
 
-                var parthTime = document.createElement('material-expand');
+                var parthTime = document.createElement('material-expand'); //Помещаем в переменную создание тега Разворачиваемой панели
                 parthTime.summary = parthNames[i];
 
                 if ((i === 0) || (i === 4)) {

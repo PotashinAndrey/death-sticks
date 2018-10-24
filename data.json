@@ -4,7 +4,7 @@
     "src": "organ.jpg",
     "ModeOfApplication": {
       "dayParth": [1,0,1,0,1],
-      "ingestion": [1,0,0],
+      "ingestion": [0,1,0],
       "otherFunction" : ""
     }
   },
